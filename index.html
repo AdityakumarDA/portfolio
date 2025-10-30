@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Kumar - Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #667eea;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gradient">
+                    Aditya Kumar
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="text-yellow-300">Aditya Kumar</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-200">
+                        Data Analyst
+                    </h2>
+                    <p class="text-xl mb-8 text-gray-200 leading-relaxed">
+                        Detail-oriented Data Analyst with strong command of Excel, VBA, and modern analytics tools. 
+                        I transform messy datasets into actionable insights and build interactive dashboards 
+                        that drive smarter business decisions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects" class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="animate-slide-in-right text-center">
+                    <div class="floating">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                            <i class="fas fa-chart-line text-8xl text-yellow-300 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-4">Data-Driven Solutions</h3>
+                            <p class="text-gray-200">Turning complex data into clear, actionable insights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Professional Summary</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            I'm a detail-oriented Data Analyst with a Bachelor's in Science and strong expertise in Excel, VBA, 
+                            and modern analytics tools. My passion lies in building interactive dashboards using PivotTables, 
+                            Power Query, and advanced Excel formulas.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            I specialize in spotting data inconsistencies, quick problem-solving, and transforming messy datasets 
+                            into clear, actionable insights. With experience in Power BI, SQL, and Python, I help organizations 
+                            make smarter decisions through data-driven analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Excel Expert</span>
+                            <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">Power BI</span>
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">SQL</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <i class="fas fa-graduation-cap text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="font-semibold text-gray-900 mb-2">Education</h4>
+                            <p class="text-gray-600 text-sm">Bachelor of Science<br>Bhim Rao Ambedkar University</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <i class="fas fa-map-marker-alt text-4xl text-green-600 mb-4"></i>
+                            <h4 class="font-semibold text-gray-900 mb-2">Location</h4>
+                            <p class="text-gray-600 text-sm">Sonipat, Haryana<br>131001</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <i class="fas fa-certificate text-4xl text-purple-600 mb-4"></i>
+                            <h4 class="font-semibold text-gray-900 mb-2">Certifications</h4>
+                            <p class="text-gray-600 text-sm">IIM Skills & Microsoft<br>Power BI Associate</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <i class="fas fa-briefcase text-4xl text-orange-600 mb-4"></i>
+                            <h4 class="font-semibold text-gray-900 mb-2">Experience</h4>
+                            <p class="text-gray-600 text-sm">Data Analyst Intern<br>IIM Skills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive toolkit for modern data analysis and visualization
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Excel -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <i class="fas fa-file-excel text-5xl text-green-600 mb-6 skill-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Excel</h3>
+                        <p class="text-gray-600 mb-6">Advanced formulas (VLOOKUP, INDEX-MATCH, SUMIFS), PivotTables, data cleaning, Power Query, and VBA automation</p>
+                        <div class="flex justify-center">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <i class="fab fa-python text-5xl text-blue-600 mb-6 skill-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Python</h3>
+                        <p class="text-gray-600 mb-6">Data analysis with Pandas and Matplotlib for EDA, data wrangling, and automation of repetitive tasks</p>
+                        <div class="flex justify-center">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQL -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <i class="fas fa-database text-5xl text-orange-600 mb-6 skill-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">SQL</h3>
+                        <p class="text-gray-600 mb-6">Data types, queries, aggregate functions, subqueries, joins, CTEs, and window functions</p>
+                        <div class="flex justify-center">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-orange-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <i class="fas fa-chart-bar text-5xl text-yellow-600 mb-6 skill-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Power BI</h3>
+                        <p class="text-gray-600 mb-6">Data reporting, DAX, data modeling, and data cleaning expertise</p>
+                        <div class="flex justify-center">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tableau -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <i class="fas fa-chart-pie text-5xl text-purple-600 mb-6 skill-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tableau</h3>
+                        <p class="text-gray-600 mb-6">Dashboard creation, data visualization, action filters, parameters, and data transformation</p>
+                        <div class="flex justify-center">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaboration -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <i class="fas fa-users text-5xl text-indigo-600 mb-6 skill-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Collaboration</h3>
+                        <p class="text-gray-600 mb-6">Google Workspace proficiency and strong problem-solving skills for team environments</p>
+                        <div class="flex justify-center">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Work Experience</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+            </div>
+            <div class="space-y-12">
+                <!-- Data Analyst Intern -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Data Analyst Intern</h3>
+                            <p class="text-lg text-blue-600 font-medium">IIM SKILLS | Internship | Certificate</p>
+                            <p class="text-gray-600">Delhi (Remote) • May 2025 - July 2025</p>
+                        </div>
+                        <div class="mt-4 lg:mt-0">
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Remote</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-chart-line text-blue-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Conducted exploratory data analysis on real-world datasets (Netflix viewing logs), uncovering patterns in genre popularity and peak engagement times</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-cogs text-blue-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Cleaned and transformed messy data using Python scripts and Excel automation, reducing manual prep work</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-database text-blue-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Extracted, joined, and managed large tables in SQL, organizing campaign and traffic data into relational schemas</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-tachometer-alt text-blue-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Designed interactive Power BI dashboards turning complex metrics into clear visuals for stakeholders</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gamer Support Analyst -->
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Gamer Support Analyst</h3>
+                            <p class="text-lg text-green-600 font-medium">Teleperformance (Ubisoft Process)</p>
+                            <p class="text-gray-600">Mohali, Chandigarh • February 2023 - November 2023</p>
+                        </div>
+                        <div class="mt-4 lg:mt-0">
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">On-site</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-headset text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Resolved 200+ in-game bugs and account issues via chat and email, driving 20% increase in customer satisfaction</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-users text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Coordinated with internal teams including sales to deliver instant resolutions and reduced response time by 30%</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-chart-bar text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Automated weekly reports, saving 10+ hours per week and improving reporting accuracy by 15%</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-lightbulb text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Analyzed client feedback and shared insights with teams, contributing to 10% improvement in process efficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- AdWords Data Analysis Project -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900">AdWords Data Analysis</h3>
+                        <a href="#" class="text-blue-600 hover:text-blue-800">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        End-to-end AdWords data analysis project from keyword classification in Python to interactive 
+                        Power BI dashboards, uncovering campaign performance insights.
+                    </p>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span class="text-gray-700">Organized messy keyword data in Python for theme analysis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span class="text-gray-700">Cleaned and structured data using Excel formulas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span class="text-gray-700">Designed SQL database with key relationships</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span class="text-gray-700">Built interactive Power BI dashboards</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Excel</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+                    </div>
+                </div>
+
+                <!-- Certifications Showcase -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Certifications</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-blue-500 pl-6">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-2">Data Analytics Certification</h4>
+                            <p class="text-blue-600 font-medium mb-2">IIM Skills, New Delhi • March 2025</p>
+                            <p class="text-gray-600 text-sm mb-3">Expertise in Power BI, SQL, Excel, and Python for comprehensive data analysis</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">View Certificate →</a>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-6">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-2">PL-300: Microsoft Power BI Data Analyst</h4>
+                            <p class="text-purple-600 font-medium mb-2">Microsoft • June 2025</p>
+                            <p class="text-gray-600 text-sm mb-3">Advanced DAX, data modeling, and Power BI Service management</p>
+                            <a href="#" class="text-purple-600 hover:text-purple-800 text-sm font-medium">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Ready to transform your data into actionable insights? Let's discuss how I can help your organization make data-driven decisions.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-yellow-400 text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <a href="mailto:datadrivenaditya@gmail.com" class="text-gray-200 hover:text-yellow-400 transition-colors">
+                                    datadrivenaditya@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-yellow-400 text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <a href="tel:+918607595636" class="text-gray-200 hover:text-yellow-400 transition-colors">
+                                    +91 8607595636
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-yellow-400 text-xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <p class="text-gray-200">Sonipat, Haryana 131001</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-2xl font-semibold mb-6">Send Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400">
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-400 text-gray-900 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Aditya Kumar. All rights reserved. | Built with ❤️ using HTML, CSS & Tailwind CSS
+            </p>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95');
+            } else {
+                nav.classList.remove('bg-white/95');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
