@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Kumar - Data Analyst Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -115,10 +116,11 @@
         }
         
         .text-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: #1e293b;
+            background-clip: initial;
+            color: #1e293b;
         }
         
         /* Additional translucent elements */
@@ -238,6 +240,15 @@
             color: #f1f5f9;
         }
         
+        /* Ensure button text is visible in dark mode */
+        .dark-mode .bg-yellow-400 {
+            color: #1e293b !important;
+        }
+        
+        .dark-mode .bg-yellow-400:hover {
+            color: #1e293b !important;
+        }
+        
         .dark-mode .nav-link {
             color: #cbd5e1;
         }
@@ -247,10 +258,11 @@
         }
         
         .dark-mode .text-gradient {
-            background: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: #f8fafc;
+            background-clip: initial;
+            color: #f8fafc;
         }
         
         .dark-mode input, 
@@ -390,6 +402,7 @@
             }
         }
     </style>
+
 </head>
 <body class="bg-gray-50">
     <!-- Theme Toggle Button -->
@@ -410,6 +423,7 @@
                     <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 font-clear">Skills</a>
                     <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 font-clear">Experience</a>
                     <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 font-clear">Projects</a>
+                    <a href="#certifications" class="nav-link text-gray-700 hover:text-blue-600 font-clear">Certifications</a>
                     <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-clear">Contact</a>
                 </div>
                 <div class="md:hidden">
@@ -428,6 +442,7 @@
         <a href="#skills" class="font-clear">Skills</a>
         <a href="#experience" class="font-clear">Experience</a>
         <a href="#projects" class="font-clear">Projects</a>
+        <a href="#certifications" class="font-clear">Certifications</a>
         <a href="#contact" class="font-clear">Contact</a>
     </div>
 
@@ -702,135 +717,241 @@
                 <h2 class="text-4xl font-bold text-gray-900 mb-4 font-clear">Featured Projects</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-12">
                 <!-- Adword Data Analysis Project -->
-                <div class="glass-card rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-semibold text-gray-900 font-clear">Adword Data Analysis</h3>
-                        <a href="https://github.com/adityakumarda" class="text-blue-600 hover:text-blue-800">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-gray-600 mb-6 font-clear">
-                        Developed a complete data analytics solution to analyze Google AdWords campaign performance.
-                        Includes data cleaning in Excel and Python, relational modeling in MySQL, and dynamic dashboarding in Power BI.
-                    </p>
-                    <div class="space-y-4 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Data cleaning in Excel and Python</span>
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">Adword Data Analysis</h3>
+                            <p class="text-lg text-blue-600 font-medium font-clear">Data Analytics Project</p>
+                            <p class="text-gray-600 font-clear">Complete solution for Google AdWords campaign performance analysis</p>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Relational modeling in MySQL</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Dynamic dashboarding in Power BI</span>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://github.com/AdityakumarDA/Adword-Data-Analysis" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Project
+                            </a>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-database text-blue-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Developed complete data analytics solution to analyze Google AdWords campaign performance with data cleaning in Excel and Python</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-project-diagram text-blue-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Implemented relational modeling in MySQL for structured data management</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-line text-blue-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Created dynamic dashboarding in Power BI for interactive data visualization</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-clear">Excel</span>
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-clear">Python</span>
                         <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-clear">MySQL</span>
                         <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-clear">Power BI</span>
                     </div>
                 </div>
-    
+
                 <!-- K-Means Web Analytics Project -->
-                <div class="glass-card rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-semibold text-gray-900 font-clear">K-Means Web Analytics</h3>
-                        <a href="https://github.com/adityakumarda" class="text-blue-600 hover:text-blue-800">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-gray-600 mb-6 font-clear">
-                        Used Python and K-Means to cluster website users based on behaviour and engagement patterns.
-                        Identified clear user segments using the elbow method to support better content and UX decisions.
-                    </p>
-                    <div class="space-y-4 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">K-Means clustering with scikit-learn</span>
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">K-Means Web Analytics</h3>
+                            <p class="text-lg text-purple-600 font-medium font-clear">Machine Learning Project</p>
+                            <p class="text-gray-600 font-clear">User segmentation and behavioral pattern analysis</p>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">User segmentation analysis</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Data preparation with Pandas</span>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://github.com/AdityakumarDA/kmeans-web-analytics" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Project
+                            </a>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-brain text-purple-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Used Python and K-Means algorithm to cluster website users based on behavior and engagement patterns</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-user-friends text-purple-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Identified clear user segments using the elbow method to support better content and UX decisions</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-file-alt text-purple-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Prepared clean datasets with Pandas to ensure reliable and interpretable analysis</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-clear">Python</span>
                         <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-clear">scikit-learn</span>
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-clear">pandas</span>
                         <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-clear">matplotlib</span>
                     </div>
                 </div>
-    
+
                 <!-- Netflix Insights Project -->
-                <div class="glass-card rounded-2xl p-8 shadow-lg card-hover">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-semibold text-gray-900 font-clear">Netflix Insights & Trends Analysis</h3>
-                        <a href="https://github.com/adityakumarda/Netflix-Insights-Analysis" target="_blank" class="text-blue-600 hover:text-blue-800">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-gray-600 mb-6 font-clear">
-                        Analysed 8k+ Netflix titles and broke down trends in genres, countries and release patterns using Tableau.
-                        Built an interactive dashboard that lets users explore top genres, top countries and year-wise content growth.
-                    </p>
-                    <div class="space-y-4 mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Analysis of 8k+ Netflix titles</span>
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">Netflix Insights & Trends Analysis</h3>
+                            <p class="text-lg text-red-600 font-medium font-clear">Data Visualization Project</p>
+                            <p class="text-gray-600 font-clear">Content trend analysis and interactive dashboard creation</p>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Interactive dashboard in Tableau</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                            <span class="text-gray-700 font-clear">Trend analysis in genres and countries</span>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://github.com/AdityakumarDA/Netflix-Insights-Trends-Genres-Analysis" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Project
+                            </a>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-film text-red-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Analyzed 8k+ Netflix titles to break down trends in genres, countries and release patterns using Tableau</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-table text-red-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Cleaned and structured the dataset in Excel to prepare it for clear, reliable visual analysis</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-bar text-red-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Built an interactive dashboard that lets users explore top genres, top countries and year-wise content growth</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
                         <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-clear">Tableau</span>
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-clear">Excel</span>
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-clear">Data Visualization</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Certifications Showcase -->
-                <div class="glass-card rounded-2xl p-8 shadow-lg card-hover">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6 font-clear">Certifications</h3>
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-blue-500 pl-6">
-                            <h4 class="text-lg font-semibold text-gray-900 mb-2 font-clear">Power BI Data Analyst Associate</h4>
-                            <p class="text-blue-600 font-medium mb-2 font-clear">Microsoft</p>
-                            <p class="text-gray-600 text-sm mb-3 font-clear">PL-300 certification for advanced Power BI skills</p>
-                            <a href="https://www.credly.com/badges/search?q=PL-300" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium font-clear">View Certificate →</a>
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 font-clear">Certifications</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- Power BI Certification -->
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">Power BI Data Analyst Associate</h3>
+                            <p class="text-lg text-blue-600 font-medium font-clear">Microsoft</p>
+                            <p class="text-gray-600 font-clear">PL-300 certification for advanced Power BI skills</p>
                         </div>
-                        <div class="border-l-4 border-purple-500 pl-6">
-                            <h4 class="text-lg font-semibold text-gray-900 mb-2 font-clear">Fabric Analytics Engineer Associate</h4>
-                            <p class="text-purple-600 font-medium mb-2 font-clear">Microsoft</p>
-                            <p class="text-gray-600 text-sm mb-3 font-clear">DP-600 certification for Microsoft Fabric analytics</p>
-                            <a href="https://www.credly.com/badges/search?q=DP-600" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium font-clear">View Certificate →</a>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://drive.google.com/file/d/19P9yjRYjv8a6pQBjHs8_p0rUGLEpoQMz/view?usp=sharing" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                View Certificate
+                            </a>
                         </div>
-                        <div class="border-l-4 border-green-500 pl-6">
-                            <h4 class="text-lg font-semibold text-gray-900 mb-2 font-clear">Career Essentials in Data Analysis</h4>
-                            <p class="text-green-600 font-medium mb-2 font-clear">Microsoft and LinkedIn</p>
-                            <p class="text-gray-600 text-sm mb-3 font-clear">Foundational data analysis skills and career preparation</p>
-                            <a href="https://www.linkedin.com/learning/certificates/" target="_blank" class="text-green-600 hover:text-green-800 text-sm font-medium font-clear">View Certificate →</a>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-pie text-blue-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Advanced DAX functions and data modeling techniques</p>
                         </div>
-                        <div class="border-l-4 border-yellow-500 pl-6">
-                            <h4 class="text-lg font-semibold text-gray-900 mb-2 font-clear">Data Analytics Master Course</h4>
-                            <p class="text-yellow-600 font-medium mb-2 font-clear">IIM Skills</p>
-                            <p class="text-gray-600 text-sm mb-3 font-clear">Comprehensive data analytics training with internship</p>
-                            <a href="https://www.iimskills.com/certification/" target="_blank" class="text-yellow-600 hover:text-yellow-800 text-sm font-medium font-clear">View Certificate →</a>
+                        <div class="flex items-start">
+                            <i class="fas fa-database text-blue-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Power BI Service management and deployment</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-sync text-blue-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Data connectivity and transformation capabilities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabric Analytics Certification -->
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">Fabric Analytics Engineer Associate</h3>
+                            <p class="text-lg text-purple-600 font-medium font-clear">Microsoft</p>
+                            <p class="text-gray-600 font-clear">DP-600 certification for Microsoft Fabric analytics</p>
+                        </div>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://drive.google.com/file/d/1wnkPScJz-wD1URNf3awq_eZjhtWM_02M/view?usp=drive_link" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-cloud text-purple-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Microsoft Fabric platform and analytics capabilities</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-server text-purple-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Data engineering and pipeline management</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-cogs text-purple-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">End-to-end analytics solution implementation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Essentials Certification -->
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">Career Essentials in Data Analysis</h3>
+                            <p class="text-lg text-green-600 font-medium font-clear">Microsoft and LinkedIn</p>
+                            <p class="text-gray-600 font-clear">Foundational data analysis skills and career preparation</p>
+                        </div>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://drive.google.com/file/d/1af6pzZFPMtFguuj9rxOFnUyq0I2C2CkS/view?usp=sharing" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-graduation-cap text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Core data analysis methodologies and best practices</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-briefcase text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Career development and professional skills for data analysts</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-tools text-green-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Essential tools and techniques for modern data analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IIM Skills Certification -->
+                <div class="glass-card rounded-2xl p-8 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-2 font-clear">Data Analytics Master Course</h3>
+                            <p class="text-lg text-yellow-600 font-medium font-clear">IIM Skills</p>
+                            <p class="text-gray-600 font-clear">Comprehensive data analytics training with internship</p>
+                        </div>
+                        <div class="mt-4 lg:mt-0">
+                            <a href="https://drive.google.com/file/d/1q6QW61UKQ4eHa8n3v2horoPOnBWf78kU/view?usp=sharing" target="_blank" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-book text-yellow-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Comprehensive curriculum covering all major data analytics domains</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-user-clock text-yellow-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Hands-on internship experience with real-world projects</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-certificate text-yellow-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 font-clear">Industry-recognized certification with practical application</p>
                         </div>
                     </div>
                 </div>
@@ -874,7 +995,7 @@
                             <i class="fas fa-map-marker-alt text-yellow-400 text-xl mr-4"></i>
                             <div>
                                 <p class="font-semibold font-clear">Location</p>
-                                <p class="text-gray-200 font-clear">Faridabad, Haryana</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Faridabad,+Haryana" class="text-gray-200 font-clear">Faridabad, Haryana</p>
                             </div>
                         </div>
                     </div>
@@ -892,15 +1013,18 @@
                 </div>
                 <div class="glass-card-dark rounded-2xl p-8 border border-white/20">
                     <h3 class="text-2xl font-semibold mb-6 font-clear">Send Message</h3>
-                    <form class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div>
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 font-clear">
+                            <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 font-clear" required>
                         </div>
                         <div>
-                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 font-clear">
+                            <input type="email" id="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 font-clear" required>
                         </div>
                         <div>
-                            <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 resize-none font-clear"></textarea>
+                            <input type="text" id="subject" placeholder="Subject" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 font-clear" required>
+                        </div>
+                        <div>
+                            <textarea id="message" rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-yellow-400 resize-none font-clear" required></textarea>
                         </div>
                         <button type="submit" class="w-full bg-yellow-400 text-gray-900 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 font-clear">
                             Send Message
@@ -1028,6 +1152,82 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+    
+    // Contact form submission handling
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Prepare parameters for EmailJS
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_email: 'datadrivenaditya@gmail.com' // Your email address
+        };
+        
+        console.log('Attempting to send email with params:', templateParams);
+        
+        // Send email using EmailJS (new SDK format)
+        emailjs.send('service_49tg96q', 'template_bk5urwk', templateParams, 'BBsQsOb8R6UotoAYk') // Include public key as 4th parameter
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            // Custom success message without origin prefix
+            const successAlert = document.createElement('div');
+            successAlert.innerHTML = `
+                <div style="position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; max-width: 300px;">
+                    <strong>Message Sent Successfully!</strong><br>
+                    Thank you for reaching out. I will connect with you as soon as possible.
+                </div>
+            `;
+            document.body.appendChild(successAlert);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                successAlert.remove();
+            }, 5000);
+            
+            // Reset form
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            console.error('Error details:', error.text || error);
+            console.error('Status code:', error.status);
+            
+            // Custom error message without origin prefix
+            const errorAlert = document.createElement('div');
+            errorAlert.innerHTML = `
+                <div style="position: fixed; top: 20px; right: 20px; background: #f44336; color: white; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; max-width: 300px;">
+                    <strong>Error Sending Message</strong><br>
+                    ${error.text || error.message || 'Unknown error occurred'}<br>
+                    Please try again or contact me directly.
+                </div>
+            `;
+            document.body.appendChild(errorAlert);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                errorAlert.remove();
+            }, 5000);
+        })
+        .finally(() => {
+            // Restore button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+    });
     </script>
 </body>
 </html>
